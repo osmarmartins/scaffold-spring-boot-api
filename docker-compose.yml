@@ -1,0 +1,13 @@
+services:
+  database:
+    image: mysql:5.7-oracle
+    container_name: mysql-dev
+    ports:
+      - 3306:3306
+    volumes:
+      - /opt/data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=scaffold
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      
+# docker run --name mysql-dev -v /home/osmar/mysql:/etc/mysql/conf.d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql:5.7-oracle      
